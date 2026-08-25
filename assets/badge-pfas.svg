@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72" role="img" aria-label="PFAS free">
+  <circle cx="36" cy="36" r="34" fill="#f3efe7" stroke="#96682f" stroke-width="2"/>
+  <path d="M36 17c8 11 13 17 13 24a13 13 0 0 1-26 0c0-7 5-13 13-24z" fill="none" stroke="#96682f" stroke-width="2.6"/>
+  <path d="M21 55L51 21" stroke="#a33b28" stroke-width="4" stroke-linecap="round"/>
+</svg>

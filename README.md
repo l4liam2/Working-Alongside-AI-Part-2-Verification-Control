@@ -19,6 +19,10 @@ Note that `TRAPS.md` is still publicly fetchable if this repo is public or the s
 Plain HTML and CSS. No JavaScript, no build step, no dependencies. One stylesheet (`style.css`).
 `contact.html` is form markup only and transmits nothing.
 
+Imagery lives in `assets/` — original SVG for the logo, the four product line drawings and the
+certification badges, plus three openly licensed photographs in `assets/img/`. Sources and licences are
+in [CREDITS.md](CREDITS.md). Nothing in an image, caption or `alt` attribute carries a planted trap.
+
 ## Deploying to GitHub Pages
 
 Settings → Pages → Source: **Deploy from a branch** → Branch: **main**, folder: **/ (root)**.

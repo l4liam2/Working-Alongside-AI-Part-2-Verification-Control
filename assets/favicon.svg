@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Marnwood Packaging Co.">
+  <rect width="64" height="64" rx="13" fill="#2c5039"/>
+  <path d="M19.5 22h25l-3.4 25.6a3.2 3.2 0 0 1-3.2 2.8H26.1a3.2 3.2 0 0 1-3.2-2.8z" fill="#faf7f2"/>
+  <rect x="16.5" y="16" width="31" height="7" rx="3.5" fill="#d9a441"/>
+  <path d="M27 30.5h10" stroke="#d8c5a4" stroke-width="2" stroke-linecap="round"/>
+</svg>

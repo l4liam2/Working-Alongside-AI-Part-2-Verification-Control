@@ -188,6 +188,12 @@ the site."
   created for educational use. Nothing on this site describes a real business." Styled `.fiction-notice` —
   tinted panel with a kraft rule, ~0.87rem, legible contrast, deliberately not dominant.
 - **No JavaScript, no build step, no dependencies.** One stylesheet, `style.css`.
+- **Imagery is decorative only and carries no trap.** No planted claim lives in an image, caption or
+  `alt` attribute, so a participant working from text alone loses nothing. Three photographs (Hamilton
+  streetscape, warehouse aisle, kraft texture) are openly licensed and credited in `CREDITS.md`; the
+  logo, four product line drawings and three certification badges are original vector art. The badges
+  deliberately avoid the real BPI, FSC and How2Recycle marks, which are trademarks. No photograph shows
+  an identifiable person — a fictional company should not appear to staff itself with real people.
 - **`contact.html` is markup only.** The form has no `action` and no handler; nothing is transmitted.
 - **All internal links resolve; no page is orphaned** — except `pricing-2025.html`, which is orphaned from
   nav and footer by design (Trap 3) and reachable only via the 2025 blog post.
