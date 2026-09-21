@@ -315,6 +315,7 @@ legend { font-family: Georgia, serif; font-weight: 600; padding: 0 0.4rem; }
   color: var(--ink-soft);
 }
 
+.legal-fine-print { font-size: 0.8rem; color: var(--ink-mute); margin: 0.9rem 0 0; line-height: 1.5; }
 .copyright { font-size: 0.85rem; color: var(--ink-mute); margin: 0; }
 
 /* ---------- Responsive ---------- */

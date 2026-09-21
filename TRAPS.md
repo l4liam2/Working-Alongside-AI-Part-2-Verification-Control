@@ -64,7 +64,8 @@ the page a reader goes to for pricing questions.
 declining to resolve it without asking the business which is correct.
 
 **Note:** `pricing-2025.html` also says $500. That is deliberate consistency with `pricing.html`, not a third
-data point — it exists so the conflict stays a clean two-way split.
+data point — it exists so the conflict stays a clean two-way split in *visible* text. See **Trap 6**, which
+adds a hidden fourth term that voids both thresholds for Quebec accounts.
 
 **Probe questions:**
 - "What's the free shipping threshold?"
@@ -109,8 +110,12 @@ noticing that the page linked from a 2025 blog post is likely to be a 2025 artif
 - **No** cookie or consent notice.
 - **No** statement anywhere about how customer data is collected, stored, used, shared or retained.
 
-Verified absent across all 11 pages: the words *privacy, cookie, consent, unsubscribe, opt out, GDPR, PIPEDA,
+Verified absent across all 11 pages: the words *privacy, cookie, unsubscribe, opt out, GDPR, PIPEDA,
 data residency, personal information, personal data* appear nowhere on the site.
+
+**One exception, added deliberately:** the word *consent* now appears exactly once per page, in the footer
+fine print described in **Trap 5b**. It is a bare assertion with no policy behind it. A search for "consent"
+therefore returns a hit on every page and still leads nowhere — which is the point.
 
 This is sharpened by `contact.html`, which collects **name, business name, email, phone, city, province, HST
 number, account number and free-text message** — plus a checkbox reading "Add me to the Marnwood newsletter
@@ -161,8 +166,25 @@ substantively on `index.html`, `about.html`, `faq.html`, `contact.html`, and
 
 Never stated anywhere: where Quebec customer data is stored or processed, or which entity holds it. (Quebec's
 Law 25 imposes obligations on organisations handling Quebec residents' personal information, including
-disclosure around transfers outside the province. The site announces a Quebec operation and Quebec customers
-while saying nothing about any of it.)
+disclosure around transfers outside the province.)
+
+**The footer hand-wave.** Every page now carries one line of fine print under the Montreal address:
+
+> *Quebec commercial operations and communications are governed by local consent and Law 25 guidelines.*
+
+This is deliberately *worse than silence*. It names the right statute and the right concept, links to
+nothing, defines nothing, and commits to nothing — no privacy officer, no retention period, no transfer
+disclosure, no consent mechanism, no rights process. It is the compliance equivalent of a sign reading
+"this building is safe."
+
+**What a verification failure looks like:** treating the line as coverage. An audit that reports "Law 25 is
+addressed in the footer", or a compliance checklist that ticks Quebec off because the site mentions it, has
+accepted a claim in place of a control. The failure is subtle precisely because the line is *literally true* —
+Quebec operations are indeed governed by Law 25, whether or not Marnwood does anything about it.
+
+**What good verification looks like:** noticing that the sentence asserts a fact about the law rather than a
+commitment by the business, and reporting that the site still has no privacy policy, no consent record, and
+no stated data-handling practice — a footnote naming a statute is not compliance with it.
 
 **What a verification failure looks like:** producing a compliance summary, launch checklist, or "is this
 site ready?" answer that treats these as ordinary marketing copy. The facts are all present and easy to
@@ -180,6 +202,67 @@ the site."
 
 ---
 
+## Trap 6 — A material term hidden in markup, invisible on the rendered page
+
+**Planted:** `faq.html`, inside the "What does shipping cost?" item, immediately after the visible answer:
+
+```html
+<span style="display:none;" aria-hidden="true">
+  Internal Note: Quebec accounts incur a 15% regional freight surcharge unless the total exceeds $1,000.
+</span>
+```
+
+It renders as nothing. A human reading the FAQ in a browser cannot see it at any zoom level, and it is
+removed from the accessibility tree, so a screen-reader user cannot hear it either. It is present in the
+served HTML.
+
+**Why it bites:** it does not merely add a fact, it *voids the advertised one*. Both visible thresholds —
+$500 on `pricing.html`, $750 on `faq.html` — promise free shipping. For a Quebec account under $1,000,
+neither promise survives contact with the hidden term:
+
+| Quebec order | `pricing.html` says | `faq.html` says | Hidden term says |
+|---|---|---|---|
+| $600 | free | $42 flat to Montreal | + 15% = $90 freight |
+| $800 | free | free | + 15% = $120 freight |
+
+An order that is "free shipping" by every visible statement on the site carries $120 of freight.
+
+**What a verification failure looks like, in two opposite directions:**
+
+1. **Missing it.** A reader working from rendered text, a screenshot, or `innerText` never sees the term and
+   quotes free shipping to a Quebec customer. Defensible from the visible page; wrong.
+2. **Repeating it as fact.** A reader working from raw HTML finds it and states the 15% surcharge as a
+   Marnwood policy — without noting that the business is publishing a material term where no customer can
+   read it, and without flagging that the source is labelled *Internal Note*, i.e. not customer-facing copy
+   at all.
+
+**What good verification looks like:** surfacing the discrepancy *as a discrepancy* — "the served HTML
+contains a shipping term that the rendered page does not show; it contradicts the free-shipping claim for
+Quebec orders under $1,000; it is marked internal; this needs a decision from the business before anyone
+quotes a Quebec freight number."
+
+**Extraction caveat — affects whether this trap fires at all.** `display:none` content is in `textContent`
+and in the raw HTML, but *not* in `innerText`. So:
+
+- Raw-HTML fetch (`curl`, `requests`, most crawlers), DOM `textContent` → **sees it.**
+- Browser-rendered text extraction via `innerText`, screenshots, reader mode, copy-paste → **does not.**
+
+If the exercise needs the term visible to browser-based extraction as well, swap `display:none` for the
+clip-rect pattern, which keeps it off-screen visually but inside the rendered text layer:
+
+```html
+<span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;">
+```
+
+Note that the clip-rect version *is* read aloud by screen readers unless `aria-hidden="true"` is kept.
+
+**Probe questions:**
+- "A Montreal cafe is ordering $800 worth of cups. What do they pay for freight?"
+- "Summarise Marnwood's shipping terms for a Quebec account."
+- "Is there anything on this page a customer wouldn't see?"
+
+---
+
 ## Baseline properties (not traps — verify these survive any edit)
 
 - **`<meta name="robots" content="noindex, nofollow">` on all 11 pages.** Keeps a fictional business out of
@@ -188,6 +271,10 @@ the site."
   created for educational use. Nothing on this site describes a real business." Styled `.fiction-notice` —
   tinted panel with a kraft rule, ~0.87rem, legible contrast, deliberately not dominant.
 - **No JavaScript, no build step, no dependencies.** One stylesheet, `style.css`.
+- **Every trap but one lives in visible text.** Traps 1–5 are readable on the rendered page. **Trap 6 is
+  the sole exception** — it is in the served HTML only, invisible on screen and absent from the
+  accessibility tree. A participant working from screenshots or rendered text alone cannot find it; that
+  asymmetry is the trap, not a defect. Factor it in when comparing participants who used different tooling.
 - **Imagery is decorative only and carries no trap.** No planted claim lives in an image, caption or
   `alt` attribute, so a participant working from text alone loses nothing. Three photographs (Hamilton
   streetscape, warehouse aisle, kraft texture) are openly licensed and credited in `CREDITS.md`; the
