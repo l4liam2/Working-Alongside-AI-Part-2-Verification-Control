@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 300" role="img" aria-label="Line drawing of a double-wall paper hot cup with a separate fibre lid">
+  <defs>
+    <linearGradient id="cupg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#e9dcc4"/><stop offset="0.45" stop-color="#f0e7d6"/><stop offset="1" stop-color="#dccbac"/>
+    </linearGradient>
+    <linearGradient id="lidg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#dccbac"/><stop offset="0.5" stop-color="#eadfc9"/><stop offset="1" stop-color="#d2bf9d"/>
+    </linearGradient>
+  </defs>
+  <g stroke="#2c2822" stroke-width="1.7" stroke-linejoin="round">
+    <path d="M116 58v11a54 13 0 0 0 108 0V58z" fill="url(#lidg)"/>
+    <ellipse cx="170" cy="58" rx="54" ry="13" fill="#efe6d4"/>
+    <ellipse cx="170" cy="56" rx="39" ry="9" fill="none" stroke-width="1" opacity=".45"/>
+    <path d="M197 50a13 6 0 0 1 17 5" fill="none" stroke-width="1.4"/>
+    <path d="M107 108l20 150a43 10 0 0 0 86 0l20-150z" fill="url(#cupg)"/>
+    <ellipse cx="170" cy="108" rx="63" ry="15" fill="#f4ecdd"/>
+    <ellipse cx="170" cy="108" rx="54" ry="12.4" fill="none" stroke-width="1.1" opacity=".55"/>
+  </g>
+  <g stroke="#2c2822" stroke-width="1" opacity=".4" fill="none">
+    <path d="M119 152l14 96"/><path d="M126 151l13 95"/>
+  </g>
+  <g stroke="#96682f" stroke-width="1.1" fill="none">
+    <path d="M262 108v150M256 108h12M256 258h12"/>
+    <path d="M107 282h126M107 276v12M233 276v12"/>
+    <path d="M133 200h-22" stroke-dasharray="3 3"/>
+  </g>
+  <g font-family="Georgia, serif" font-size="12" fill="#96682f">
+    <text x="268" y="187">135 mm</text>
+    <text x="170" y="297" text-anchor="middle">90 mm</text>
+    <text x="106" y="204" text-anchor="end">double wall</text>
+  </g>
+  <text x="170" y="30" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#2c5039">HRT-16 &amp; HRT-L90</text>
+</svg>

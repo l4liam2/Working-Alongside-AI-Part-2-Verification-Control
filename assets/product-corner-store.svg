@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 300" role="img" aria-label="Line drawing of a handled kraft paper bag showing the side gusset">
+  <defs>
+    <linearGradient id="bagg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#dccbac"/><stop offset="0.35" stop-color="#efe6d4"/><stop offset="1" stop-color="#d2bf9d"/>
+    </linearGradient>
+  </defs>
+  <g stroke="#2c2822" stroke-width="1.7" fill="none" stroke-linecap="round">
+    <path d="M133 112c0-30 74-30 74 0" stroke-width="3.4"/>
+    <path d="M120 108c0-26 60-26 60 0" stroke-width="2" opacity=".4"/>
+  </g>
+  <g stroke="#2c2822" stroke-width="1.7" stroke-linejoin="round">
+    <path d="M100 104h140v152H100z" fill="url(#bagg)"/>
+    <path d="M100 104h140v22H100z" fill="#e2d5b8"/>
+    <path d="M100 104l26 16v136l-26-8z" fill="#c9b48d"/>
+    <path d="M126 120h114" fill="none" stroke-width="1.1" opacity=".45"/>
+  </g>
+  <g stroke="#2c2822" stroke-width="1" opacity=".3" fill="none">
+    <path d="M126 248h114"/>
+  </g>
+  <g stroke="#96682f" stroke-width="1.1" fill="none">
+    <path d="M262 104v152M256 104h12M256 256h12"/>
+    <path d="M100 274h140M100 268v12M240 268v12"/>
+  </g>
+  <g font-family="Georgia, serif" font-size="12" fill="#96682f">
+    <text x="268" y="184">13 in</text>
+    <text x="170" y="290" text-anchor="middle">10 in</text>
+  </g>
+  <text x="170" y="34" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#2c5039">CST-H2</text>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 300" role="img" aria-label="Isometric line drawing of a kraft tuck-top takeout box with the lid flap raised">
+  <g stroke="#2c2822" stroke-width="1.7" stroke-linejoin="round">
+    <path d="M150 118h110l-55 32H95z" fill="#e8dcc2"/>
+    <path d="M95 150h110v80H95z" fill="#d8c5a4"/>
+    <path d="M205 150l55-32v80l-55 32z" fill="#c2a97f"/>
+    <path d="M150 118l22-52h110l-22 52z" fill="#efe7d6"/>
+    <path d="M172 66l-55 32 33 20" fill="#e2d5b8"/>
+  </g>
+  <g stroke="#2c2822" stroke-width="1" opacity=".35" fill="none">
+    <path d="M95 172h110M95 208h110"/>
+  </g>
+  <g stroke="#96682f" stroke-width="1.1" fill="none">
+    <path d="M80 150v80M74 150h12M74 230h12"/>
+    <path d="M95 248h110M95 242v12M205 242v12"/>
+    <path d="M215 242l50-29M211 236l6 12M261 207l6 12"/>
+  </g>
+  <g font-family="Georgia, serif" font-size="12" fill="#96682f">
+    <text x="70" y="194" text-anchor="end">3 in</text>
+    <text x="150" y="266" text-anchor="middle">9 in</text>
+    <text x="248" y="243">9 in</text>
+  </g>
+  <text x="170" y="26" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#2c5039">RDG-L</text>
+</svg>

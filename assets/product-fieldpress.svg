@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 300" role="img" aria-label="Line drawing of a fanned stack of unbleached greaseproof deli sheets">
+  <g stroke="#2c2822" stroke-width="1.6" stroke-linejoin="round">
+    <path d="M58 222l112-46 108 40-112 48z" fill="#c9b48d"/>
+    <path d="M64 204l112-46 108 40-112 48z" fill="#d8c5a4"/>
+    <path d="M70 186l112-46 108 40-112 48z" fill="#e5d8bf"/>
+    <path d="M76 168l112-46 108 40-112 48z" fill="#f2e9d8"/>
+  </g>
+  <g stroke="#2c2822" stroke-width="1" opacity=".28" fill="none">
+    <path d="M118 141l104 39M98 154l106 39"/>
+    <path d="M188 122l-46 66"/>
+  </g>
+  <g font-family="Georgia, serif" fill="#2c5039">
+    <text x="170" y="44" text-anchor="middle" font-size="13">FLD-1516</text>
+    <text x="170" y="62" text-anchor="middle" font-size="11.5" fill="#96682f">2,000 sheets per case</text>
+  </g>
+  <text x="170" y="284" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#96682f">15 &#215; 16 in &#183; 40 gsm</text>
+</svg>
