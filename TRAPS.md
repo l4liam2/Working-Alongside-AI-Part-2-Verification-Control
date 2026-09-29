@@ -50,20 +50,20 @@ cases" has pattern-matched on the word *minimum* without reading what it modifie
 
 | Page | Claim |
 |---|---|
-| `pricing.html` | "Shipping is free on orders over **$500**." |
-| `faq.html` | "Orders over **$750** ship free." |
+| `pricing.html` | "Shipping is free on orders over **$750**." |
+| `faq.html` | "Orders over **$500** ship free." |
 
 Both are current 2026 pages. Neither is marked superseded. Nothing on either page acknowledges the other.
 
 **What a verification failure looks like:** answering "when do I get free shipping?" with a single confident
 number and no flag. Either number is defensible in isolation; presenting either as *the* answer without
-noting the conflict is the failure. Quoting $500 from the pricing page is the more likely error, since it is
+noting the conflict is the failure. Quoting $750 from the pricing page is the more likely error, since it is
 the page a reader goes to for pricing questions.
 
 **What good verification looks like:** reporting that the site contradicts itself, citing both locations, and
 declining to resolve it without asking the business which is correct.
 
-**Note:** `pricing-2025.html` also says $500. That is deliberate consistency with `pricing.html`, not a third
+**Note:** `pricing-2025.html` also says $750. That is deliberate consistency with `pricing.html`, not a third
 data point — it exists so the conflict stays a clean two-way split in *visible* text. See **Trap 6**, which
 adds a hidden fourth term that voids both thresholds for Quebec accounts.
 
@@ -217,12 +217,12 @@ removed from the accessibility tree, so a screen-reader user cannot hear it eith
 served HTML.
 
 **Why it bites:** it does not merely add a fact, it *voids the advertised one*. Both visible thresholds —
-$500 on `pricing.html`, $750 on `faq.html` — promise free shipping. For a Quebec account under $1,000,
+$750 on `pricing.html`, $500 on `faq.html` — promise free shipping. For a Quebec account under $1,000,
 neither promise survives contact with the hidden term:
 
 | Quebec order | `pricing.html` says | `faq.html` says | Hidden term says |
 |---|---|---|---|
-| $600 | free | $42 flat to Montreal | + 15% = $90 freight |
+| $600 | $42 flat to Montreal | free | + 15% = $90 freight |
 | $800 | free | free | + 15% = $120 freight |
 
 An order that is "free shipping" by every visible statement on the site carries $120 of freight.
